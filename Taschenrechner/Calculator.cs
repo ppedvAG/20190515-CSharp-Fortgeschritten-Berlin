@@ -11,39 +11,32 @@ namespace Taschenrechner
         public delegate int CalcMethod(int op1, int op2);
         CalcMethod calc;
    
-        public Calculator(string calcMethod)
-        {
-            if (calcMethod == "Add")
-            {
-                calc = new CalcMethod(Add);
-            } else if (calcMethod == "Sub")
-            {
-                calc = new CalcMethod(delegate(int op1, int op2)
-                {
-                    return op1 - op2;
-                });
-            } else if (calcMethod == "Mul")
-            {
-                calc = delegate (int op1, int op2)
-                {
-                    return op1 * op2;
-                };
-            }
+        Dictionary<CalcMethods, CalcMethod> CalcDic;
 
+        public Calculator(CalcMethods calcMethod)
+        {
+            CalcDic = new Dictionary<CalcMethods, CalcMethod>();
+            CalcDic.Add(CalcMethods.Add, (op1, op2) => op1 + op2);
+            CalcDic.Add(CalcMethods.Div, (op1, op2) => op1 / op2);
+            CalcDic.Add(CalcMethods.Mod, (op1, op2) => op1 % op2);
+            CalcDic.Add(CalcMethods.Mul, (op1, op2) => op1 * op2);
+            CalcDic.Add(CalcMethods.Sub, (op1, op2) => op1 - op2);
+
+            calc = CalcDic[calcMethod];
         }
 
         public int Calculate(int op1,int op2)
         {
             return calc(op1, op2);
         }
-        
-        public int Add(int op1, int op2)
+
+        public enum CalcMethods
         {
-            return op1 + op2;
-        }
-        public int Sub(int op1, int op2)
-        {
-            return op1 - op2;
+            Add,
+            Sub,
+            Mod,
+            Div,
+            Mul
         }
     }
 }
