@@ -18,7 +18,16 @@ namespace Taschenrechner
                 calc = new CalcMethod(Add);
             } else if (calcMethod == "Sub")
             {
-                calc = new CalcMethod(Sub);
+                calc = new CalcMethod(delegate(int op1, int op2)
+                {
+                    return op1 - op2;
+                });
+            } else if (calcMethod == "Mul")
+            {
+                calc = delegate (int op1, int op2)
+                {
+                    return op1 * op2;
+                };
             }
 
         }
