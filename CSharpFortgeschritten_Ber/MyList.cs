@@ -6,38 +6,38 @@ using System.Threading.Tasks;
 
 namespace CSharpFortgeschritten_Ber
 {
-    class MyList
+    class MyList<T>
     {
-        private int[] _internalArray;
+        private T[] _internalArray;
         public MyList()
         {
-            _internalArray = new int[0];
+            _internalArray = new T[0];
         }
         // Die Liste muss dynamisch erweitert werden
-        public void Add(int zahl)
+        public void Add(T item)
         {
-            var newArray = new int[_internalArray.Length + 1];
+            var newArray = new T[_internalArray.Length + 1];
             // ohne Kopierkonstruktor
 
             for (int i = 0; i < _internalArray.Length; i++)
             {
                 newArray[i] = _internalArray[i];
             }
-            newArray[_internalArray.Length] = zahl;
+            newArray[_internalArray.Length] = item;
             _internalArray = newArray;
         }
         // Die Elemente müssen aufrücken
-        public void Remove(int zahl)
+        public void Remove(T item)
         {
             if(_internalArray.Length == 0)
             {
                 throw new Exception("Die Liste enthält keine Elemente.");
             }
-            var newArray = new int[_internalArray.Length - 1];
+            var newArray = new T[_internalArray.Length - 1];
             var j = 0;
             for (int i = 0; i < _internalArray.Length; i++)
             {
-                if(_internalArray[i] == zahl)
+                if(_internalArray[i].Equals(item))
                 {
                     continue;
                 }

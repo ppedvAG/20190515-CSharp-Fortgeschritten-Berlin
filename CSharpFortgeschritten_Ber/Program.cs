@@ -11,8 +11,8 @@ namespace CSharpFortgeschritten_Ber
     {
         static void Main(string[] args)
         {
-
-            MyList myList = new MyList();
+            
+            MyList<int> myList = new MyList<int>();
 
             myList.Add(22);
             myList.Add(33);
