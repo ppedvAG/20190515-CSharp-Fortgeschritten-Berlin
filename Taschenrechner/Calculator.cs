@@ -8,7 +8,7 @@ namespace Taschenrechner
 {
     class Calculator
     {
-        public delegate int CalcMethod(int op1, int op2);
+        public delegate int CalcMethod(params int[] operanden);
         CalcMethod calc;
    
         Dictionary<CalcMethods, CalcMethod> CalcDic;
@@ -16,18 +16,20 @@ namespace Taschenrechner
         public Calculator(CalcMethods calcMethod)
         {
             CalcDic = new Dictionary<CalcMethods, CalcMethod>();
-            CalcDic.Add(CalcMethods.Add, (op1, op2) => op1 + op2);
+            CalcDic.Add(CalcMethods.Add, op => op.Sum());
             CalcDic.Add(CalcMethods.Div, (op1, op2) => op1 / op2);
             CalcDic.Add(CalcMethods.Mod, (op1, op2) => op1 % op2);
             CalcDic.Add(CalcMethods.Mul, (op1, op2) => op1 * op2);
             CalcDic.Add(CalcMethods.Sub, (op1, op2) => op1 - op2);
 
             calc = CalcDic[calcMethod];
+
         }
 
-        public int Calculate(int op1,int op2)
+        public int Calculate(params int[] operanden)
         {
-            return calc(op1, op2);
+       
+            return calc(operanden);
         }
 
         public enum CalcMethods
