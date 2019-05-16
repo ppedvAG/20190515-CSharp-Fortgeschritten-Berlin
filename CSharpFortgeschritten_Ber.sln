@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpFortgeschritten_Ber",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner", "Taschenrechner\Taschenrechner.csproj", "{55C1FA12-AE0A-4635-8E48-7267235F9850}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{47964D7B-D112-4AA8-8F4E-253D80F0F39B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{55C1FA12-AE0A-4635-8E48-7267235F9850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55C1FA12-AE0A-4635-8E48-7267235F9850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55C1FA12-AE0A-4635-8E48-7267235F9850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47964D7B-D112-4AA8-8F4E-253D80F0F39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47964D7B-D112-4AA8-8F4E-253D80F0F39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47964D7B-D112-4AA8-8F4E-253D80F0F39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47964D7B-D112-4AA8-8F4E-253D80F0F39B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
