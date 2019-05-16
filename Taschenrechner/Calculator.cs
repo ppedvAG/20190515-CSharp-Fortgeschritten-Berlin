@@ -20,7 +20,7 @@ namespace Taschenrechner
             //CalcDic.Add(CalcMethods.Div, (op1, op2) => op1 / op2);
             //CalcDic.Add(CalcMethods.Mod, (op1, op2) => op1 % op2);
             //CalcDic.Add(CalcMethods.Mul, (op1, op2) => op1 * op2);
-            CalcDic.Add(CalcMethods.Sub, op => op.Substract());
+            CalcDic.Add(CalcMethods.Sub, op => op.Aggregate((x, y) => x - y));
 
             int[] test = new int[10];
             test.Substract();
