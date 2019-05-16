@@ -13,8 +13,10 @@ namespace Threading
         {
             Thread t = new Thread(new ParameterizedThreadStart(MachEtwas));
             t.Start("A");
+            t.Join();
             Thread t2 = new Thread(new ParameterizedThreadStart(MachEtwas));
             t2.Start("B");
+            Mutex mutex = new Mutex();
             Console.ReadKey();
         }
 
