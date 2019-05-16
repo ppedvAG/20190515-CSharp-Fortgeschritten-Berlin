@@ -17,10 +17,14 @@ namespace Taschenrechner
         {
             CalcDic = new Dictionary<CalcMethods, CalcMethod>();
             CalcDic.Add(CalcMethods.Add, op => op.Sum());
-            CalcDic.Add(CalcMethods.Div, (op1, op2) => op1 / op2);
-            CalcDic.Add(CalcMethods.Mod, (op1, op2) => op1 % op2);
-            CalcDic.Add(CalcMethods.Mul, (op1, op2) => op1 * op2);
-            CalcDic.Add(CalcMethods.Sub, (op1, op2) => op1 - op2);
+            //CalcDic.Add(CalcMethods.Div, (op1, op2) => op1 / op2);
+            //CalcDic.Add(CalcMethods.Mod, (op1, op2) => op1 % op2);
+            //CalcDic.Add(CalcMethods.Mul, (op1, op2) => op1 * op2);
+            CalcDic.Add(CalcMethods.Sub, op => op.Substract());
+
+            int[] test = new int[10];
+            test.Substract();
+            string[] test1 = new string[10];
 
             calc = CalcDic[calcMethod];
 
