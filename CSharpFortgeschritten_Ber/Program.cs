@@ -20,6 +20,22 @@ namespace CSharpFortgeschritten_Ber
 
             myList.Remove(33);
 
+            MyDict<int, string> myDict = new MyDict<int, string>();
+            myDict.Add(5, "Fünf");
+            myDict.Add(3, "Drei");
+            myDict.Add(1, "Eins");
+
+            myDict.Remove(3);
+            Console.WriteLine(  myDict.Keys[0]);
+
+            foreach (var item in myDict)
+            {
+                Console.WriteLine(item.key);
+                Console.WriteLine(item.value);
+
+            }
+
+
             Console.WriteLine(myList);
             Console.ReadKey();
         }
