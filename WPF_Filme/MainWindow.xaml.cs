@@ -25,7 +25,7 @@ namespace WPF_Filme
     public partial class MainWindow : Window
     {
         FilmList FilmListeLokal { get; set; } = new FilmList();
-        public MainWindow(ISave save)
+        public MainWindow()
         {
             InitializeComponent();
             FilmListe.DataContext = FilmListeLokal;
@@ -44,14 +44,18 @@ namespace WPF_Filme
 
             Film film = JsonConvert.DeserializeObject<Film>(responseBody);
             FilmEditor.DataContext = film;
-            FilmListeLokal.Filme.Add(film);
-            FilmListe.Items.Refresh();
             MessageBox.Show(responseBody);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            save.Save(film);
+        }
+
+        private void AddToList_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var film = (Film)FilmEditor.DataContext;
+            FilmListeLokal.Filme.Add(film);
+            FilmListe.Items.Refresh();
         }
     }
 }

@@ -15,21 +15,23 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Grid Margin="91,46,109.6,351">
+        <Grid Margin="91,46,109.6,333">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Height="23" TextWrapping="Wrap" Name="titelSearch" Text="" VerticalAlignment="Top" Margin="0,0,255,0" Grid.ColumnSpan="2"/>
-            <TextBox Height="23" TextWrapping="Wrap" Name="yearSearch" Text="" VerticalAlignment="Top" Margin="379,0,122,0" Grid.ColumnSpan="2"/>
+            <TextBox Text="" Height="23" TextWrapping="Wrap" Name="titelSearch" VerticalAlignment="Top" Margin="10,8,243.8,0" Grid.ColumnSpan="2"/>
+            <TextBox Height="23" TextWrapping="Wrap" Name="yearSearch" Text="" VerticalAlignment="Top" Margin="374,8,126.8,0" Grid.ColumnSpan="2"/>
             <Button Content="Suchen" Width="75" Margin="518,0,-0.2,0" Grid.ColumnSpan="2" Click="Send_Request_Button_Click"/>
         </Grid>
         <ListBox Name="FilmListe" ItemsSource="{Binding Filme, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Margin="10,106,561.6,52"/>
-        <Button Content="Löschen" Width="75" Margin="23,388,695.6,10"/>
-        <Button Content="Bearbeiten" Width="75" Margin="135,388,583.6,10"/>
+        <Button Content="Löschen" Width="75" Margin="23,373,695.6,10"/>
+        <Button Content="Bearbeiten" Width="75" Margin="135,373,583.6,10"/>
         <Grid Name="FilmEditor">
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Title}" Margin="337,198,241.6,198"/>
+                <Label Content="Label"/>
             <TextBox TextWrapping="Wrap" Text="{Binding Genre}" Margin="337,226,241.6,164"/>
+                <Button Content="Hinzufügen" Width="75" Margin="477,387,241.6,10" Click="AddToList_Button_Click"/>
         </Grid>
     </Grid>
 </Window>
