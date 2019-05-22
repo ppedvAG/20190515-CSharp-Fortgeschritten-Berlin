@@ -10,8 +10,11 @@ namespace Taschenrechner
     {
         static void Main(string[] args)
         {
-            var addCalc = new Calculator(Calculator.CalcMethods.Add);
-            Console.WriteLine(addCalc.Calculate(10, 5));
+
+
+            var addCalc = new Calculator();
+            addCalc.StartUI();
+
             Console.ReadKey();
 
         }
