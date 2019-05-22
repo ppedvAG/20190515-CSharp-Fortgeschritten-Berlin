@@ -30,9 +30,9 @@ namespace WPFMitSpeichern
     {
         public IStore store;
         public Filme Filme;
-        public MainWindow()
+        public MainWindow(IStore store)
 		{
-            store = new FileBinStore();
+            store = store;
 			Filme = new Filme();
 			InitializeComponent();
 			Filme.FilmListe = new List<Film>();
